@@ -2,16 +2,130 @@
 
 > *Banking Management System is a simple database project in C. It is done using file handling mechanism in C. The record of the customer can be added, updated, searched and deleted. It is simple project made using console application of C. This means, no graphics component are added. The main target user of this project are the C beginners who want to make the project in C and especially those who are interested in File handling. This projects is complete package to learn how to use file as database.*
 
-## Group Name
+#### Group Name
 
-**return sleep;**
+return sleep;
 
-## Group No 
+#### Group No 
 
-**P36**
+P36
 
-### Task 1:
-- Customer Registration (Account Number, Name, Age,etc.,) 
+## GROUP MEMBERS
+
+NAME | ROLL NO	| WORK
+:---------------------------- | ----------------------- | --------------------------------
+*[Krishna Kumar Dey](https://github.com/krishnadey30)* | 201601046 | Creating bst for users, Main function, Creating bst for address, Registration of new user.
+*[Vishakha Khurangale](https://github.com/vishakhakhurangale)* | 201601043 | Updating the details of the user such as username, password, address, email id, mobile no, update balance.
+*[Dharani Devi Akurathi](https://github.com/Dharni0607)* | 201601003 | performing transaction , printing transaction history , Updating transaction file.
+*[Preethi Hena](https://github.com/preethihena)* | 201601024 | Deleting account of user, deleting transaction details, creating linked list of transaction.
+
+## DATA STRUCTURE USED 
+
+> Binary Search Tree is used for the data creation because it will be efficient in terms of space and complexity to search records. Also Linked list is used to delete an Account.
+___
+### ```Task 1:```
+
+#### Customer Registration (Account Number, Name, Age,etc.,) 
+- _void filetolist(USER_DETAIL *temp,USER_DETAIL *new)_
+
+   - this function add nodes in a binary search tree of user details
+   - tree is made based on account No of the user
+
+- _void validating_account_no(USER_DETAIL *temp,long int acc_no)_
+
+	- this function validate that the account no given is prevoiusly present or not
+	- mainly used while creating account by new user to allocate different account no to different users.
+	- it is traversing via pre-order traversal
+	- if account no found make the flag '0'
+
+- _void Account_No(USER_DETAIL *acc,USER_DETAIL *roothead)_
+
+	- for Generating account number randomly
+	- calls the 'validating_account_no()' to validate the new account no generated so that no two user have same account no
+	- if that account no does not exist then assign it to the new user
+	- else going back to the loop again to generate the account no randomly
+
+- _USER_DETAIL *from_file_to_tree()_
+	- reading from file and  creating a tree
+	- reading from file line by line
+	- calls 'filetolist()' for adding it the binary search tree
+
+- _void Address(int pin,USER_DETAIL *acc,ADDRESS *temp)_
+	- checking address from the given pin code
+	- traversing in post order and checking the address for the given pin code
+	- 4 options are given:
+		1. to conferm
+			- if confermed the add that address in user details
+		2. to check for another
+			- if user want to check another address with same pin code
+		3. to enter by yourself
+			- if user want to enter the address by themself 
+		4. to enter another pincode
+			- if user want to check for another pin code
+
+- _void validating_username(USER_DETAIL *temp,char user_name[])_
+	- to check if that username doesnot exist previously
+	- if username found making flag '0' so that program can ask to enter different username
+	- traversing in pre-order traversal
+
+- _void Username(USER_DETAIL *acc,USER_DETAIL *roothead)_
+	- Asking for username
+	- calling 'validating_username()' for validating username
+	- if username not found then conferm the username
+	- else ask for another username
+
+- _void passwordhide(USER_DETAIL *acc)_
+	- to take password and print * in place of password
+
+- _void createadresstree(ADDRESS *temp,ADDRESS *new)_
+	- Creating Address Tree
+	- binary search tree by pincode
+
+- _ADDRESS *addressinlist()_
+	- scaning pincode and address from file
+	- calling 'createadresstree()' to add the address in binary tree
+	- returns the address for root
+
+- _int validating_email(char A[])_
+	- for validating email address
+	- retruns 1 if correct else 0
+
+- _USER_DETAIL *NEW_USER(USER_DETAIL *temp)_
+	- function to create a new user account
+	- will ask the user for
+		- Account_type
+			- Saving
+			- Current
+			- Fixed	
+		- Name
+		- Gender
+			- Male
+			- Female
+			- Others
+		- Father's Name
+		- DOB(DD/MM/YYYY)
+		- Pincode
+			- call the 'Address()' function to know the address of that pincode
+		- Mobile No
+			- validate the Mobile No
+		- Email_Id
+			- call the 'validating_email()' to validate the email id
+		- Opening balance
+		- Userame
+			- call the 'Username()' to get a valid username
+		- password
+			- call the 	'passwordhide()' to get password in hidden form
+		- account_no
+			- calls 'Account_No()' to get a valid account no
+	- call 'filetolist()' to add the new user in binary search tree
+	- return root pointer of binary search tree
+
+- _void from_tree_to_file(FILE *pas,USER_DETAIL *new_ac)_
+	- re-writting the whole tree to file
+	- pre-oreder traversal of bst
+
+- _void writingtofile(USER_DETAIL *temp)_
+	- call the 'from_tree_to_file()' to re-write the whole tree to file
 
 ### Task 2:
 - Account Updation 
@@ -26,123 +140,12 @@
 * Deletion  (eg. Removing account by providing the account number) 
 
 
-## DATA STRUCTURE USED 
-
-> Binary Search Tree is used for the data creation because it will be efficient in terms of space and complexity to search records. Also Linked list is used to delete an Account.
-
-## GROUP MEMBERS
-NAME	| ROLL NO	| WORK
----------------------------- | ----------------------- | --------------------------------
-*[Krishna Kumar Dey](https://github.com/krishnadey30)* | 201601046 | Creating bst for users, Main function, Creating bst for address, Registration of new user.
-*[Vishakha Khurangale](https://github.com/vishakhakhurangale)* | 201601043 | Updating the details of the user such as username, password, address, email id, mobile no, update balance.
-*[Dharani Devi Akurathi](https://github.com/Dharni0607)* | 201601003 | performing transaction , printing transaction history , Updating transaction file.
-*[Preethi Hena](https://github.com/preethihena)* | 201601024 | Deleting account of user, deleting transaction details, creating linked list of transaction.
-
-		// TASK - 1 //
---------------Krishna Kumar Dey-----------------
-
-		void filetolist(USER_DETAIL *temp,USER_DETAIL *new)
-			->this function add nodes in a binary search tree of user details
-			->tree is made based on account No of the user
-
-		void validating_account_no(USER_DETAIL *temp,long int acc_no)
-			->this function validate that the account no given is prevoiusly present or not
-			->mainly used while creating account by new user to allocate different account no to different users.
-			->it is traversing via pre-order traversal
-			->if account no found make the flag '0'
-
-		void Account_No(USER_DETAIL *acc,USER_DETAIL *roothead)
-			->for Generating account number randomly
-			->calls the 'validating_account_no()' to validate the new account no generated so that no two user have same account no
-			->if that account no does not exist then assign it to the new user
-			->else going back to the loop again to generate the account no randomly
-
-		USER_DETAIL *from_file_to_tree()
-			->reading from file and  creating a tree
-			->reading from file line by line
-			->calls 'filetolist()' for adding it the binary search tree
-
-		void Address(int pin,USER_DETAIL *acc,ADDRESS *temp)
-			->checking address from the given pin code
-			->traversing in post order and checking the address for the given pin code
-			-> 4 options are given:
-					1 to conferm
-						if confermed the add that address in user details
-					2 to check for another
-						if user want to check another address with same pin code
-					3 to enter by yourself
-						if user want to enter the address by themself 
-					4 to enter another pincode
-						if user want to check for another pin code
-
-		void validating_username(USER_DETAIL *temp,char user_name[])
-			->to check if that username doesnot exist previously
-			->if username found making flag '0' so that program can ask to enter different username
-			->traversing in pre-order traversal
-
-		void Username(USER_DETAIL *acc,USER_DETAIL *roothead)
-			->Asking for username
-			->calling 'validating_username()' for validating username
-			->if username not found then conferm the username
-			->else ask for another username
-
-		void passwordhide(USER_DETAIL *acc)	
-			->to take password and print * in place of password
-
-		void createadresstree(ADDRESS *temp,ADDRESS *new)
-			->Creating Address Tree
-			->binary search tree by pincode
-
-		ADDRESS *addressinlist()
-			->scaning pincode and address from file
-			->calling 'createadresstree()' to add the address in binary tree
-			->returns the address for root
-
-		int validating_email(char A[])
-			->for validating email address
-			->retruns 1 if correct else 0
-
-		USER_DETAIL *NEW_USER(USER_DETAIL *temp)
-			->function to create a new user account
-			->will ask the user for
-				->Account_type
-					->Saving
-					->Current
-					->Fixed	
-				->Name
-				->Gender
-					->Male
-					->Female
-					->Others
-				->Father's Name
-				->DOB(DD/MM/YYYY)
-				->Pincode
-					->call the 'Address()' function to know the address of that pincode
-				->Mobile No
-					->validate the Mobile No
-				->Email_Id
-					->call the 'validating_email()' to validate the email id
-				->Opening balance
-				->Userame
-					->call the 'Username()' to get a valid username
-				->password
-					->call the 	'passwordhide()' to get password in hidden form
-				->account_no
-					-> calls 'Account_No()' to get a valid account no
-			->call 'filetolist()' to add the new user in binary search tree
-			->return root pointer of binary search tree
-
-		void from_tree_to_file(FILE *pas,USER_DETAIL *new_ac)
-			->re-writting the whole tree to file
-			->pre-oreder traversal of bst
-
-		void writingtofile(USER_DETAIL *temp)
-			->call the 'from_tree_to_file()' to re-write the whole tree to file
 
 
 
 
-									// TASK - 2 //
+
+								
 ---------------------------------------------------------Vishakha Khurangale---------------------------------------------
 
 		void updation(USER_DETAIL *user,long int n)

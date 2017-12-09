@@ -22,6 +22,29 @@ NAME | ROLL NO	| WORK
 ## DATA STRUCTURE USED 
 
 > Binary Search Tree is used for the data creation because it will be efficient in terms of space and complexity to search records. Also Linked list is used to delete an Account.
+
+## Requirements
+
+* [C](https://gcc.gnu.org/install/binaries.html)  
+
+## Getting Started
+
+To clone and run this application, you'll need Git,gcc installed on your computer.  From your command line:
+
+### Clone this repository
+```
+$ git clone https://github.com/krishnadey30/Bank-Management-System.git
+```
+
+### Go into the repository
+```
+$ cd Bank-Management-System
+```
+
+### Run the app
+```
+$ gcc p36-main().c
+```
 ___
 ### ```Task 1:```
 
@@ -230,7 +253,7 @@ ___
 	- This function is used to withdraw amount in users account.
 
 
-
+___
 ### ```Task 4:```
 #### Deletion  (eg. Removing account by providing the account number) 
 

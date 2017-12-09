@@ -1,7 +1,10 @@
 # Bank Management System
-## GROUP NAME : "return sleep;"
 
-## Group No :P36
+## Group Name
+"return sleep;"
+
+## Group No 
+P36
 
 ## Description:
 
@@ -9,26 +12,36 @@ Banking Management System is a simple database project in C. It is done using fi
 
 ### Task 1:
 ```
-1. Customer Registration (Account Number, Name, Age,etc.,)
-
+* Customer Registration (Account Number, Name, Age,etc.,)
 (Initially some values might be empty WOL of semanticity).
 ```
-###Task 2:
 
-Account Updation
-Email update
-Mobile number update(eg. Customer wants update email)
+### Task 2:
+```
+* Account Updation
+```
+```
+* Email update
+```
+```
+* Mobile number update(eg. Customer wants update email)
+```
 
-Task 3:
-Transaction history
-Searching (eg. search database to find all customers with name “ABCD”.
+### Task 3:
+```
+* Transaction history
+```
+```
+* Searching (eg. search database to find all customers with name “ABCD”.
+```
+### Task 4:
+```
+* Deletion  (eg. Removing account by providing the account number)
+```
 
-Task 4:
-Deletion  (eg. Removing account by providing the account number)
 
-
-
-DATA STRUCTURE USED : Binary Search Tree is used for the data creation because it will be efficient in terms of space and complexity to search records. Also Linked list is used to delete an Account.
+### DATA STRUCTURE USED 
+Binary Search Tree is used for the data creation because it will be efficient in terms of space and complexity to search records. Also Linked list is used to delete an Account.
 
 	
 

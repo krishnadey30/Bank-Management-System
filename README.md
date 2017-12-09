@@ -4,41 +4,39 @@
 
 ## Group Name
 
-_**``return sleep;``**_
+**return sleep;**
 
 ## Group No 
 
-**``P36``**
+**P36**
 
 ### Task 1:
-
-* `Customer Registration (Account Number, Name, Age,etc.,) `
+- Customer Registration (Account Number, Name, Age,etc.,) 
 
 ### Task 2:
-
-* ` Account Updation `
-* ` Email update `
-* ` Mobile number update(eg. Customer wants update email) `
+- Account Updation 
+- Email update 
+- Mobile number update(eg. Customer wants update email)
 
 ### Task 3:
-* ``` Transaction history ```
-* ``` Searching (eg. search database to find all customers with name “ABCD”. ```
+* Transaction history 
+* Searching (eg. search database to find all customers with name “ABCD”.)
 
 ### Task 4:
-* ``` Deletion  (eg. Removing account by providing the account number) ```
+* Deletion  (eg. Removing account by providing the account number) 
 
 
-### DATA STRUCTURE USED 
+## DATA STRUCTURE USED 
 
 > Binary Search Tree is used for the data creation because it will be efficient in terms of space and complexity to search records. Also Linked list is used to delete an Account.
 
-### GROUP MEMBERS
-NAME | ROLL NO | WORK
+## GROUP MEMBERS
+NAME	| ROLL NO	| WORK
 ---------------------------- | ----------------------- | --------------------------------
-[Krishna Kumar Dey](https://github.com/krishnadey30) | 201601046 | Creating bst for users, Main function, Creating bst for address, Registration of new user.
-[Vishakha Khurangale](https://github.com/vishakhakhurangale) | 201601043 | Updating the details of the user such as username, password, address, email id, mobile no, update balance.
-[Dharani Devi Akurathi](https://github.com/Dharni0607) | 201601003 | performing transaction , printing transaction history , Updating transaction file.
-[Preethi Hena](https://github.com/preethihena) | 201601024 | Deleting account of user, deleting transaction details, creating linked list of transaction.
+*[Krishna Kumar Dey](https://github.com/krishnadey30)* | 201601046 | Creating bst for users, Main function, Creating bst for address, Registration of new user.
+*[Vishakha Khurangale](https://github.com/vishakhakhurangale)* | 201601043 | Updating the details of the user such as username, password, address, email id, mobile no, update balance.
+*[Dharani Devi Akurathi](https://github.com/Dharni0607)* | 201601003 | performing transaction , printing transaction history , Updating transaction file.
+*[Preethi Hena](https://github.com/preethihena)* | 201601024 | Deleting account of user, deleting transaction details, creating linked list of transaction.
 
 		// TASK - 1 //
 --------------Krishna Kumar Dey-----------------

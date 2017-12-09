@@ -4,11 +4,11 @@
 
 #### Group Name
 
-return sleep;
+```return sleep;```
 
 #### Group No 
 
-P36
+```P36```
 
 ## GROUP MEMBERS
 
@@ -126,160 +126,139 @@ ___
 
 - _void writingtofile(USER_DETAIL *temp)_
 	- call the 'from_tree_to_file()' to re-write the whole tree to file
+___
 
-### Task 2:
-- Account Updation 
-- Email update 
-- Mobile number update(eg. Customer wants update email)
+### ```Task 2:```
+#### Account Updation 
+#### Email update 
+#### Mobile number update(eg. Customer wants update email)
 
-### Task 3:
-* Transaction history 
-* Searching (eg. search database to find all customers with name “ABCD”.)
+- _void updation(USER_DETAIL *user,long int n)
+	- This is main updating function where all options can be updated.
+		1. username 
+		2. password
+		3. mobile number
+		4. email-id
+		5. address 
+			- *user is a pointer to head of binary search tree consisting of userdetails.
 
-### Task 4:
-* Deletion  (eg. Removing account by providing the account number) 
+- _void checkusername(USER_DETAIL *user,char y2[])_
+	- While updating username , this function is checking whether entered username is exists or not.
+	- 'y2' is username.
 
+- _void username(USER_DETAIL *user,long int n,char y2[])_
+	- This function is updating the username.
+	- 'y2' is username.
 
+- _void checkpass(USER_DETAIL *user,long int n,char x[])_
+	- While updating password , this function is checking whether entered password is exists or not.
+	- 'n' is account number. 'x' is password string.
 
+- _void password(USER_DETAIL *user,long int n,char y[])_
+	- This function is updating the password.
+	- 'n' is account number. 'y' is password string.
+- _void mobilenumber(USER_DETAIL *user,long int n,char x3[])_
+	- This function is updating the mobile number.
+	- 'n' is account number. 'x3' is mobile number string.
+- _void emailid(USER_DETAIL *user,long int n,char y3[])_
+	- This function is updating the email-id.
+	- 'n' is account number. 'y3' is email-id string.
 
+- _void address(USER_DETAIL *user,long int n,char y4[])_
+	- This function is updating address .
+	- 'n' is account number. 'y4' is address string.
+		
+- _void updatebalance(USER_DETAIL *user,long int n,float balance)_
+	- This is function to update the money into account during transaction. 
+	- 'n' is account number. 'balance' is a amouont which transacted during transaction.
 
+___
 
+### ```Task 3:```
+#### Transaction history 
+#### Searching (eg. search database to find all customers with name “ABCD”.)
 
-								
----------------------------------------------------------Vishakha Khurangale---------------------------------------------
+- _void EXISTING_USER();_
+	- If entered Username and Password exist in the userfile asks user for any transactions or updations.
+	- As per the option selected by user it calls respective functions.
 
-		void updation(USER_DETAIL *user,long int n)
-		-> This is main updating function where all options can be updated.
-		->	1.username 
-		->	2.password
-		->	3.mobile number
-		->	4.email-id
-		->	5.address 
+- _int searchusername(char entry1[],char entry2[]);_
+	- entry1 is the username of user.
+	- entry2 is for storing password of user.
 
-		-> *user is a pointer to head of binary search tree consisting of userdetails.
+- _void searchuserintree(char entry1[], char entry2[],USER_DETAIL *root,int flag1);_
+	- Here username is searched in binary search tree.
+	- If entry1(username) exists in bst then password is stored.
 
-		void checkusername(USER_DETAIL *user,char y2[])
-		-> While updating username , this function is checking whether entered username is exists or not.
-		-> 'y2' is username.
+- _void Transaction(char entry1[],USER_DETAIL *root);_
+	- entry1 is username of user. 
+	- here user can tranfer amount to any account based on his/her account details(accountno). 
 
-		void username(USER_DETAIL *user,long int n,char y2[])
-		-> This function is updating the username.
-		-> 'y2' is username.
+- _void updatetransactionfiles(long int sender,long int receiver,int amount);_
+	- FILE1 is updated with new transactions with details like sender(accountno), receiver(accountno), amount transfered, and Time(date and timings).
 
-		void checkpass(USER_DETAIL *user,long int n,char x[])
-		-> While updating password , this function is checking whether entered password is exists or not.
-		-> 'n' is account number. 'x' is password string.
+- _int getaccountno(char entry1[]);_
+	- This function returns the accountno of entry1.
 
-		void password(USER_DETAIL *user,long int n,char y[])
-		-> This function is updating the password.
-		-> 'n' is account number. 'y' is password string.
+- _void searchintree(char entry1[], USER_DETAIL *root, char accountno[],int flag1);_
+	- This function searches entry1(username) in BST and stores the accountno of entry1.
 
-		void mobilenumber(USER_DETAIL *user,long int n,char x3[])
-		-> This function is updating the mobile number.
-		-> 'n' is account number. 'x3' is mobile number string.
+- _int checkaccountno(int an,int s);_
+	- If accountno(an) exists in userfile it returns available balance of s(user) else it return 0.
 
-		void emailid(USER_DETAIL *user,long int n,char y3[])
-		-> This function is updating the email-id.
-		-> 'n' is account number. 'y3' is email-id string.
+- _void Transactionhistory(char entry1[]);_
+	- Asks the user to selects one of given options. If option 1 is selected then it displays all Transaction history of the user.
+	- (Using linkedlist) if the account no of user matches it displays details.
+	- If 2nd option is selected 'searchbydate' function is called.
 
-		void address(USER_DETAIL *user,long int n,char y4[])
-		->	This function is updating address .
-		-> 'n' is account number. 'y4' is address string.
+- _LLIST *createlinkedlist(LLIST *head);_
+	- Input is taken from FILE1(Transaction history file). Head has 4 parts 1.accountno, 2.string1, 3.string2, 4.next
+	- Accountno is stored in accountno, date is stored in string1 ,transaction details are stored in string2.
 
-		void updatebalance(USER_DETAIL *user,long int n,float balance)
-		-> This is function to update the money into account during transaction. 
-		-> 'n' is account number. 'balance' is a amouont which transacted during transaction.
+- _void searchbydate(char entry1[]);_
+	- Here user can search transactions on particular date.
+	- This function searches for accountno and date in FILE1(Transaction history file), If matches then displays details.
 
-			
+- _int checkdate(char Month[],int date,int year,char string[])_
+	- Checks if the date matches with the date in the string.
+	- If matches return 1 else retuen 0.
 
+- _void Deposit(char entry1[]);_
+	- This function is used to deposit amount in users account.
 
-
-										// TASK - 3 //
-------------------------------------------------Dharani Devi Akurathi------------------------------------------------------
-
-		void EXISTING_USER();
-		-> If entered Username and Password exist in the userfile asks user for any transactions or updations.
-		-> As per the option selected by user it calls respective functions.
-
-		int searchusername(char entry1[],char entry2[]);
-		-> entry1 is the username of user.
-		-> entry2 is for storing password of user.
-
-		void searchuserintree(char entry1[], char entry2[],USER_DETAIL *root,int flag1);
-		-> Here username is searched in binary search tree.
-		-> If entry1(username) exists in bst then password is stored.
-
-		void Transaction(char entry1[],USER_DETAIL *root);
-		-> entry1 is username of user. 
-		-> here user can tranfer amount to any account based on his/her account details(accountno). 
-
-		void updatetransactionfiles(long int sender,long int receiver,int amount);
-		-> FILE1 is updated with new transactions with details like sender(accountno), receiver(accountno), amount transfered, and Time(date and timings).
-
-		int getaccountno(char entry1[]);
-		-> This function returns the accountno of entry1.
-
-		void searchintree(char entry1[], USER_DETAIL *root, char accountno[],int flag1);
-		-> This function searches entry1(username) in BST and stores the accountno of entry1.
-
-		int checkaccountno(int an,int s);
-		-> If accountno(an) exists in userfile it returns available balance of s(user) else it return 0.
-
-		void Transactionhistory(char entry1[]);
-		-> Asks the user to selects one of given options. If option 1 is selected then it displays all Transaction history of the user.
-		-> (Using linkedlist) if the account no of user matches it displays details.
-		-> If 2nd option is selected 'searchbydate' function is called.
-
-		LLIST *createlinkedlist(LLIST *head);
-		-> Input is taken from FILE1(Transaction history file). Head has 4 parts 1.accountno, 2.string1, 3.string2, 4.next
-		-> Accountno is stored in accountno, date is stored in string1 ,transaction details are stored in string2.
-
-		void searchbydate(char entry1[]);
-		-> Here user can search transactions on particular date.
-		-> This function searches for accountno and date in FILE1(Transaction history file), If matches then displays details.
-
-		int checkdate(char Month[],int date,int year,char string[])
-		-> Checks if the date matches with the date in the string.
-		-> If matches return 1 else retuen 0.
-
-		void Deposit(char entry1[]);
-		-> This function is used to deposit amount in users account.
-
-		void Withdrawl(char entry1[]);
-		-> This function is used to withdraw amount in users account.
+- _void Withdrawl(char entry1[]);_
+	- This function is used to withdraw amount in users account.
 
 
 
+### ```Task 4:```
+#### Deletion  (eg. Removing account by providing the account number) 
 
-								
-												// TASK - 4 //
--------------------------------------------------Preethi Hena--------------------------------------------------------------
+- _void delete1(USER_DETAIL *root,long int n);_
+	- It needs 2 parameters head pointer and the data to be deleted.
+	- deletion involves 3 parts:
+		- deletion of node having no childs:
+			- We keep traversing and storing the parent node when node to be deleted is found,we cut the link of - - - _this node with the parent node._
+	- deletion of node having one child:
+		- We store node which is before parent node in 'p' every time and when the node to be deleted is found,we cut the link of the present node  and join it to 'p'.
+	- deletion of node having two childs:
+		- We keep traversing  and if the node to be deleted is found store it ,find the minimum element in right sub tree and now again delete the node with minimum element by recursive call of deletion function.
+		- Later replace the present node data with the minimum data.
+	 	- We call the function recursively for traversing.
 
-		void delete1(USER_DETAIL *root,long int n);
-			->It needs 2 parameters head pointer and the data to be deleted.
-			->deletion involves 3 parts:
-				deletion of node having no childs:
-					We keep traversing and storing the parent node when node to be deleted is found,we cut the link of this node with the parent node.
-				deletion of node having one child:
-					We store node which is before parent node in 'p' every time and when the node to be deleted is found,we cut the link of the present node  and join it to 'p'.
-				deletion of node having two childs:
-					We keep traversing  and if the node to be deleted is found store it ,find the minimum element in right sub tree and now again delete the node with minimum element by recursive call of deletion function.
-					Later replace the present node data with the minimum data.
-			->We call the function recursively for traversing.
+- _long int min(USER_DETAIL *root);_
+	- This function is used to find  and return the minimum value from right subtree of a binary search tree.
 
-		long int min(USER_DETAIL *root);
-			-> This function is used to find  and return the minimum value from right subtree of a binary search tree.
+- _void delete(USER_DETAIL *temp,long int n);_
+	- This function calls the delete function of binary search tree, having the head pointer and the data to be deleted as parameters.
 
-		void delete(USER_DETAIL *temp,long int n);
-			->This function calls the delete function of binary search tree, having the head pointer and the data to be deleted as parameters.
+- _LLIST *createlinkedlist(LLIST *llhead)_
+	- creating stacks  using linked list 
+	- start reading from file and keep creating the stack till end of file
 
-		LLIST *createlinkedlist(LLIST *llhead)
-			->creating stacks  using linked list 
-			->start reading from file and keep creating the stack till end of file
-
-		LLIST* del(LLIST *t,long int n)
-			->deletion of nodes with given account no
+- _LLIST* del(LLIST *t,long int n)_
+	- deletion of nodes with given account no
 
 
 
------------------------------------------------------------------------------------------------------ The End --------------
+___

@@ -1,72 +1,47 @@
 # Bank Management System
 
+> *Banking Management System is a simple database project in C. It is done using file handling mechanism in C. The record of the customer can be added, updated, searched and deleted. It is simple project made using console application of C. This means, no graphics component are added. The main target user of this project are the C beginners who want to make the project in C and especially those who are interested in File handling. This projects is complete package to learn how to use file as database.*
+
 ## Group Name
-"return sleep;"
+
+_**``return sleep;``**_
 
 ## Group No 
-P36
 
-## Description:
-
-Banking Management System is a simple database project in C. It is done using file handling mechanism in C. The record of the customer can be added, updated, searched and deleted. It is simple project made using console application of C. This means, no graphics component are added. The main target user of this project are the C beginners who want to make the project in C and especially those who are interested in File handling. This projects is complete package to learn how to use file as database.
+**``P36``**
 
 ### Task 1:
-```
-* Customer Registration (Account Number, Name, Age,etc.,)
-(Initially some values might be empty WOL of semanticity).
-```
+
+* `Customer Registration (Account Number, Name, Age,etc.,) `
 
 ### Task 2:
-```
-* Account Updation
-```
-```
-* Email update
-```
-```
-* Mobile number update(eg. Customer wants update email)
-```
+
+* ` Account Updation `
+* ` Email update `
+* ` Mobile number update(eg. Customer wants update email) `
 
 ### Task 3:
-```
-* Transaction history
-```
-```
-* Searching (eg. search database to find all customers with name “ABCD”.
-```
+* ``` Transaction history ```
+* ``` Searching (eg. search database to find all customers with name “ABCD”. ```
+
 ### Task 4:
-```
-* Deletion  (eg. Removing account by providing the account number)
-```
+* ``` Deletion  (eg. Removing account by providing the account number) ```
 
 
 ### DATA STRUCTURE USED 
-Binary Search Tree is used for the data creation because it will be efficient in terms of space and complexity to search records. Also Linked list is used to delete an Account.
 
-	
+> Binary Search Tree is used for the data creation because it will be efficient in terms of space and complexity to search records. Also Linked list is used to delete an Account.
 
+### GROUP MEMBERS
+NAME | ROLL NO | WORK
+---------------------------- | ----------------------- | --------------------------------
+[Krishna Kumar Dey](https://github.com/krishnadey30) | 201601046 | Creating bst for users, Main function, Creating bst for address, Registration of new user.
+[Vishakha Khurangale](https://github.com/vishakhakhurangale) | 201601043 | Updating the details of the user such as username, password, address, email id, mobile no, update balance.
+[Dharani Devi Akurathi](https://github.com/Dharni0607) | 201601003 | performing transaction , printing transaction history , Updating transaction file.
+[Preethi Hena](https://github.com/preethihena) | 201601024 | Deleting account of user, deleting transaction details, creating linked list of transaction.
 
-
-
-
-
-GROUP MEMBERS			-	ROLL NUMBER	-	TASKS DONE
-
-Krishna Kumar Dey		-	201601046	-	Creating bst for users, Main function, Creating bst for address, Registration of new user.
-
-Vishakha Khurangale		-	201601043	-	Updating the details of the user such as username, password, address, email id, mobile no, update balance.
-
-Dharani Devi Akurathi	-	201601003	-	performing transaction , printing transaction history , Updating transaction file.
-
-Preethi Hena			-	201601024	-	Deleting account of user, deleting transaction details, creating linked list of transaction.
-
-
-
-
-
-
-							// TASK - 1 //
-------------------------------------------------------------Krishna Kumar Dey--------------------------------------------------------
+		// TASK - 1 //
+--------------Krishna Kumar Dey-----------------
 
 		void filetolist(USER_DETAIL *temp,USER_DETAIL *new)
 			->this function add nodes in a binary search tree of user details
